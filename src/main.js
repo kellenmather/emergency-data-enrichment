@@ -3,6 +3,7 @@ import App from './App.vue'
 import x5GMaps from 'x5-gmaps'
 
 Vue.config.productionTip = false
+// key not active, for dev purposes only
 Vue.use(x5GMaps, 'AIzaSyDy3qAZC4cLE5kGGJ_QNkenpi5cbDXHvng' )
 
 new Vue({
