@@ -21,11 +21,22 @@ npm run serve
 ```
 You can now find the website at localhost:8080
 
+### State of the website
+
+Currently all accidents added to the array located in accidentRecords/records.js will display on the map.
+When hovering you will see the common place name of the accident.
+An Api call goes out to meteostat to get the location of the nearest weather station. A response is received with the id of the weather station.
+An Api call goes out to retrieve the hourly data but a 400 response comes back. 
+(this happened with my data as well as the sample data given on the website, I left in the websites sample api call in line 76 of Map.vue)
+Line 68 is how I had planne don taking the weather data and adding it to the accident record.
+
 ### If I had double the time
 
 I'd try more to figure out why Meteostat Hourly and Daily API calls all returned 400 response codes (even their samples)
 I'd also have spent more time figuring out how x5-gmaps infoWindow worked: https://vuejsexamples.com/a-lightweight-google-maps-plugin-for-vue/ (which is how i planned on showing the weather data after it was added to the incident records
-I'd also abstract out the api keys as the are vulnerable in this state
+I'd also abstract out the api keys as they are vulnerable in this state
+
+Techincally, depending on how this app is meant to be used, I'd want to have the data enrichment done on a cron job then use the map website to display the accidents.
 
 
 ### Time spent
